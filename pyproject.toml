@@ -1,16 +1,15 @@
-[project]
+[tool.poetry]
 name = "gerenciar-estoque"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "liliane",email = "li.lima662@gmail.com"}
-]
+authors = ["liliane <li.lima662@gmail.com>"]
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "django (>=5.1,<6.0)"
-]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.13"
+django = ">=5.1,<6.0"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core>=1.9.0"]
 build-backend = "poetry.core.masonry.api"
