@@ -1,8 +1,14 @@
+
 # 📦 Gerenciador de Estoque (Django)
 
 Sistema web para gerenciar o inventário de produtos, evoluído a partir de uma versão CLI em Python puro. Agora usa **Django** com banco de dados, painel administrativo e interface web para cadastrar, listar, atualizar e remover produtos.
 
 ---
+## 📸 Capturas de tela
+
+| Cadastro de produto | Produto adicionado com sucesso |
+|---|---|
+| ![Formulário de cadastro de produto](docs/screenshots/cadastrar-produto.jpg) | ![Listagem mostrando produto cadastrado](docs/screenshots/produto-cadastrado.jpg) |
 
 ## 🚀 Funcionalidades
 
