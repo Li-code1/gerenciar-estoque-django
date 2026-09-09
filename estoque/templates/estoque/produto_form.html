@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %}{{ titulo }} · Gerenciador de Estoque{% endblock %}
+
+{% block conteudo %}
+  <form class="ficha" method="post" novalidate>
+    <h1>{{ titulo }}</h1>
+    {% csrf_token %}
+
+    {% if object %}
+      <p style="font-family:'Courier New',monospace;font-size:0.85rem;color:var(--verde-oliva);margin-top:-0.6rem;">
+        {{ object.nome }} — quantidade atual: {{ object.quantidade }}
+      </p>
+    {% endif %}
+
+    {% for field in form %}
+      <div class="campo">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% for erro in field.errors %}
+          <p class="erro">❌ {{ erro }}</p>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+    <div class="botoes">
+      <button class="botao principal" type="submit">Salvar</button>
+      <a class="botao" href="{% url 'produto_list' %}">Cancelar</a>
+    </div>
+  </form>
+{% endblock %}

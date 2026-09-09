@@ -1,0 +1,168 @@
+:root {
+  --tinta: #16201c;
+  --papel: #f1efe6;
+  --painel: #ffffff;
+  --linha: #d8d4c4;
+  --cobre: #b5651d;
+  --cobre-escuro: #8c4d15;
+  --verde-oliva: #4b5d43;
+  --erro: #a3352c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  line-height: 1.5;
+}
+
+.faixa {
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.faixa .marca {
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.faixa .marca span {
+  color: var(--cobre);
+  font-weight: bold;
+}
+
+.faixa a.novo {
+  background: var(--cobre);
+  color: var(--papel);
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.faixa a.novo:hover { background: var(--cobre-escuro); }
+
+.conteudo {
+  max-width: 780px;
+  margin: 2.2rem auto;
+  padding: 0 1.25rem 3rem;
+}
+
+.mensagens { list-style: none; padding: 0; margin: 0 0 1.3rem; }
+.mensagens li {
+  border-left: 3px solid var(--verde-oliva);
+  background: var(--painel);
+  padding: 0.6rem 0.9rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+table.estoque {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--painel);
+}
+
+table.estoque caption {
+  text-align: left;
+  font-family: "Courier New", monospace;
+  text-transform: lowercase;
+  color: var(--verde-oliva);
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+}
+
+table.estoque th, table.estoque td {
+  border-bottom: 1px solid var(--linha);
+  padding: 0.65rem 0.5rem;
+  text-align: left;
+}
+
+table.estoque th {
+  font-family: "Courier New", monospace;
+  font-weight: normal;
+  font-size: 0.78rem;
+  color: var(--verde-oliva);
+  border-bottom: 2px solid var(--tinta);
+}
+
+table.estoque td.numero, table.estoque th.numero {
+  text-align: right;
+  font-family: "Courier New", monospace;
+}
+
+table.estoque td.acoes {
+  text-align: right;
+  white-space: nowrap;
+}
+
+table.estoque td.acoes a {
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: var(--tinta);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--tinta);
+  margin-left: 0.8rem;
+}
+
+table.estoque td.acoes a.remover { color: var(--erro); border-bottom-color: var(--erro); }
+
+.vazio {
+  border: 1px dashed var(--linha);
+  padding: 2.2rem 1rem;
+  text-align: center;
+  color: var(--verde-oliva);
+  font-family: "Courier New", monospace;
+}
+
+form.ficha {
+  background: var(--painel);
+  padding: 1.5rem;
+  border-top: 3px solid var(--cobre);
+}
+
+form.ficha h1 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  font-family: "Courier New", monospace;
+  font-weight: normal;
+  color: var(--verde-oliva);
+}
+
+form.ficha .campo { margin-bottom: 1.1rem; }
+form.ficha label { display: block; font-size: 0.85rem; margin-bottom: 0.3rem; }
+form.ficha input {
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--linha);
+  background: var(--papel);
+  font-family: inherit;
+  font-size: 1rem;
+}
+form.ficha input:focus { outline: 2px solid var(--cobre); border-color: var(--cobre); }
+form.ficha .erro { color: var(--erro); font-size: 0.82rem; margin-top: 0.25rem; }
+
+.botoes { display: flex; gap: 0.7rem; margin-top: 1.4rem; }
+.botao {
+  padding: 0.55rem 1.1rem;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid var(--tinta);
+  color: var(--tinta);
+  background: transparent;
+  cursor: pointer;
+}
+.botao.principal { background: var(--tinta); color: var(--papel); }
+.botao.perigo { border-color: var(--erro); color: var(--erro); }
+.botao.perigo:hover { background: var(--erro); color: var(--papel); }

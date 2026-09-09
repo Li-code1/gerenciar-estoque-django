@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribuição / Pacotes
+dist/
+build/
+*.egg-info/
+
+# Ambientes Virtuais (Essencial para Poetry)
+.venv/
+venv/
+env/
+ENV/
+
+# Configurações de IDEs
+.vscode/
+.idea/
+
+# Ficheiros do SO
+.DS_Store
+Thumbs.db
+
+# Django
+db.sqlite3
+staticfiles/
+media/

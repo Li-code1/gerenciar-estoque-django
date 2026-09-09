@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block titulo %}Produtos · Gerenciador de Estoque{% endblock %}
+
+{% block conteudo %}
+  {% if produtos %}
+    <table class="estoque">
+      <caption>{{ produtos|length }} produto{{ produtos|length|pluralize }} em ordem alfabética</caption>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th class="numero">Qtd.</th>
+          <th class="numero">Preço</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for produto in produtos %}
+          <tr>
+            <td>{{ produto.nome }}</td>
+            <td class="numero">{{ produto.quantidade }}</td>
+            <td class="numero">R$ {{ produto.preco }}</td>
+            <td class="acoes">
+              <a href="{% url 'produto_update' produto.pk %}">atualizar qtd.</a>
+              <a class="remover" href="{% url 'produto_delete' produto.pk %}">remover</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="vazio">📭 o estoque está vazio — cadastre o primeiro produto.</p>
+  {% endif %}
+{% endblock %}

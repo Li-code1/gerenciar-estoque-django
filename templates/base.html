@@ -1,0 +1,27 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block titulo %}Gerenciador de Estoque{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/estoque.css' %}">
+</head>
+<body>
+  <header class="faixa">
+    <p class="marca"><span>#</span> gerenciador de estoque</p>
+    <a class="novo" href="{% url 'produto_create' %}">+ novo produto</a>
+  </header>
+
+  <main class="conteudo">
+    {% if messages %}
+      <ul class="mensagens">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% block conteudo %}{% endblock %}
+  </main>
+</body>
+</html>

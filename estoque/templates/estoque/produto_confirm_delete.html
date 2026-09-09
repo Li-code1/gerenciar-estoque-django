@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block titulo %}Remover produto · Gerenciador de Estoque{% endblock %}
+
+{% block conteudo %}
+  <form class="ficha" method="post">
+    <h1>Remover produto</h1>
+    {% csrf_token %}
+    <p>Tem certeza de que deseja remover <strong>{{ object.nome }}</strong> do estoque? Esta ação não pode ser desfeita.</p>
+    <div class="botoes">
+      <button class="botao perigo" type="submit">Remover</button>
+      <a class="botao" href="{% url 'produto_list' %}">Cancelar</a>
+    </div>
+  </form>
+{% endblock %}
